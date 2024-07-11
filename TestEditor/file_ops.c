@@ -80,6 +80,7 @@ void saveFile(TextEditor *editor, const char *filename)
     if(editor->head == NULL)
     {
 	printf("INFO : NO Data\n");
+	fclose(fp);
 	return;
     }
     
@@ -94,6 +95,8 @@ void saveFile(TextEditor *editor, const char *filename)
     while (!isStackEmpty(editor->redo)) {
 	popStack(editor->redo);
     }
+
+	fclose(fp);
 }
 
 void closeFile(TextEditor *editor)

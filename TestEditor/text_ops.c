@@ -144,6 +144,7 @@ void insertText(TextEditor *editor, const char *text)
     if(text == NULL)
     {
 	printf("INFO : No data to insert\n");
+	free(new);
 	return;
     }
     printf("data %s\n",text);
@@ -204,6 +205,7 @@ void insertText(TextEditor *editor, const char *text)
     //pushing to stack
     pushStack(editor->undo, action);
 
+	free(new);
 }
 
 //deleting the line	
